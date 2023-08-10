@@ -2,7 +2,7 @@ import java.util.*;
 class Solution05 {
     public int[] solution(int[] nums, int target){
         int[] answer = new int[2];
-        Arrays.sort(nums);
+//        Arrays.sort(nums);
 
         // 1번째 방법
 //        int n = nums.length;
@@ -17,19 +17,32 @@ class Solution05 {
 //        }
 
         // 2번쨰 방법
-        int left = 0;
-        int right = nums.length-1;
-        while (left < right) {
-            int sumN = nums[left] + nums[right];
-            if (sumN == target) {
-                answer[0] = nums[left];
-                answer[1] = nums[right];
-                break;
+//        int left = 0;
+//        int right = nums.length-1;
+//        while (left < right) {
+//            int sumN = nums[left] + nums[right];
+//            if (sumN == target) {
+//                answer[0] = nums[left];
+//                answer[1] = nums[right];
+//                break;
+//            }
+//            if (sumN < target) {
+//                left += 1;
+//            } else right -= 1;
+//        }
+        HashMap<Integer,Integer> nH = new HashMap<>();
+        for (int x:nums) {
+            int y = target - x;
+            if (nH.containsKey(y)) {
+                if (x < y) {
+                    return new int[]{x, y};
+                } else {
+                    return new int[]{y, x};
+                }
             }
-            if (sumN < target) {
-                left += 1;
-            } else right -= 1;
+            nH.put(x,1);
         }
+
 
         return answer;
     }
