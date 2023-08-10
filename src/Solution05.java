@@ -43,7 +43,6 @@ class Solution05 {
             nH.put(x,1);
         }
 
-
         return answer;
     }
 
