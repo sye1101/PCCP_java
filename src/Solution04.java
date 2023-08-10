@@ -12,9 +12,7 @@ class Solution04 {
                 odd++;
             }
         }
-        if (odd > 0) {
-            return answer - odd + 1;
-        }else return answer;
+        return odd > 0 ? answer - odd + 1 : answer;
     }
 
     public static void main(String[] args){
