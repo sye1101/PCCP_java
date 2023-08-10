@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/PCCP_jsva.iml" filepath="$PROJECT_DIR$/PCCP_jsva.iml" />
+      <module fileurl="file://$PROJECT_DIR$/PCCP_java.iml" filepath="$PROJECT_DIR$/PCCP_java.iml" />
     </modules>
   </component>
 </project>
