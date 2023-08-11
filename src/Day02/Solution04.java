@@ -1,3 +1,5 @@
+package Day02;
+
 import java.util.*;
 class Solution04 {
     public int solution(String s){
