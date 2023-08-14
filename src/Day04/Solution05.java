@@ -2,8 +2,19 @@ package Day04;
 import java.util.*;
 class Solution05 {
     public ArrayList<Integer> solution(int[] nums){
+        ArrayList<Integer> answer = new ArrayList<>();
+        PriorityQueue<Integer> pQ = new PriorityQueue<>(Collections.reverseOrder());
 
-        return new ArrayList<>();
+        for (int i:nums) {
+            if (i != 0) {
+                pQ.offer(i);
+            } else {
+                if(pQ.isEmpty()) answer.add(-1);
+                else answer.add(pQ.poll());
+            }
+        }
+
+        return answer;
     }
 
     public static void main(String[] args){

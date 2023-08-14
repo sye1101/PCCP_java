@@ -2,8 +2,17 @@ package Day04;
 import java.util.*;
 class Solution04 {
     public ArrayList<Integer> solution(int[] nums){
-
-        return new ArrayList<>();
+        ArrayList<Integer> answer = new ArrayList<>();
+        PriorityQueue<Integer> pQ = new PriorityQueue<>();
+        for (int i:nums) {
+            if (i != 0) {
+                pQ.offer(i);
+            } else {
+                if (pQ.isEmpty()) answer.add(-1);
+                 answer.add(pQ.poll());
+            }
+        }
+        return answer;
     }
 
     public static void main(String[] args){
