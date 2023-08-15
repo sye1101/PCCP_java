@@ -3,6 +3,18 @@ import java.util.*;
 class Solution05 {
     public int solution(int m, int[][] nums) {
         int answer = 0;
+        Arrays.sort(nums,(a,b) -> a[0] - b[0]);
+        int start = 0, end = 0, i = 0;
+        while (i < nums.length) {
+            // 현재 시작 위치보다 작거나 같은 지점들을 찾아서 end 값을 업데이트
+            while (i < nums.length && nums[i][0] <= start) {
+                end = Math.max(end, nums[i][1]);
+                i++;
+            }
+            answer++; // 새로운 구간을 선택했으므로 횟수 증가
+            if (end == m) return answer; // 목표 지점에 도달했다면 반환
+            start = end; // 다음 구간의 시작을 현재 구간의 끝으로 설정
+        }
 
         return answer;
     }
