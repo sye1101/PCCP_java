@@ -1,7 +1,5 @@
 package Day01;
-
 import java.util.*;
-
 class Solution04 {
 
     public static int[] solution(String moves) {

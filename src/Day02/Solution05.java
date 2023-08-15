@@ -1,5 +1,4 @@
 package Day02;
-
 import java.util.*;
 class Solution05 {
     public int[] solution(int[] nums, int target){

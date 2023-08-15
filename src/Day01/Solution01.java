@@ -1,7 +1,5 @@
 package Day01;
-
 class Solution01 {
-
     public static int solution(int[][] nums) {
         int answer = 0;
         int[] dr = {-1, 0, 1, 0};

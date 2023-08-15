@@ -1,5 +1,4 @@
 package Day04;
-import java.util.*;
 class Solution07 {
     public int solution(int[] nums, int k){
 //        int answer = 0;

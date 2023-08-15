@@ -1,5 +1,4 @@
 package Day03;
-import java.util.*;
 class Solution04 {
     public  int Count(int[] nums, int n) {
         int cnt = 0;

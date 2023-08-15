@@ -1,7 +1,5 @@
 package Day01;
-
 class Solution05 {
-
     public static int[] solution(int[][] board, int k) {
         int[] dr = {-1, 0, 1, 0};
         int[] dc = {0, 1, 0, -1};

@@ -1,5 +1,4 @@
 package Day02;
-
 import java.util.*;
 class Solution01 {
     public char solution(String s){

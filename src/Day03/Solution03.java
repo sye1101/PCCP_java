@@ -1,5 +1,4 @@
 package Day03;
-import java.util.*;
 class Solution03 {
     public int solution(int[] nums, int target){
         int answer = -1;    // target이 없을 경우 -1로 리턴
