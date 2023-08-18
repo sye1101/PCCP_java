@@ -5,6 +5,15 @@ class Solution07 {
         int answer=0;
         PriorityQueue<Integer> pQ = new PriorityQueue<>(Collections.reverseOrder());
         Arrays.sort(nums, (a,b) -> b[1] - a[1]);
+        int maxD = nums[0][1];
+        int j = 0;
+        for (int i = maxD; i >= 1; i--) {
+            for (; j < nums.length; j++) {
+                if(nums[j][1] < i) break;
+                pQ.offer(nums[j][0]);
+            }
+            if(!pQ.isEmpty()) answer += pQ.poll();
+        }
         return answer;
     }
 
