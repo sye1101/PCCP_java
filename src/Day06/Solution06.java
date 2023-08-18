@@ -1,9 +1,54 @@
 package Day06;
 import java.util.*;
 class Solution06 {
-    public int solution(int n, int[][] edge){
-        int answer = 0;
-        return answer;
+//    int[][] graph;
+//    int[] ch;
+//    int cnt;
+//    public void DFS(int v, int[][] graph, int[] ch, int n){
+//        ch[v] = 1;
+//        cnt += 1;
+//        for (int i = 1; i <= n; i++) {
+//            // graph[v][i] == 1이면 v 정점과 i 정점이 연결되어 있음.
+//            if(graph[v][i] == 1 && ch[i] == 0){
+//                DFS(i, graph, ch, n);
+//            }
+//        }
+//    }
+//
+//    public int solution(int n, int[][] edge){
+//        graph = new int[n+1][n+1];
+//        ch = new int[n+1];
+//        for (int[] x:edge) {
+//            graph[x[0]][x[1]] = 1;
+//            graph[x[1]][x[0]] = 1;
+//        }
+//        cnt = 0;
+//        DFS(1, graph, ch, n);
+//        return n - cnt;
+//    }
+    ArrayList<ArrayList<Integer>> graph;
+    int[] ch;
+    int cnt;
+    public void DFS(int v){
+        ch[v] = 1;
+        cnt += 1;
+        for (int nv:graph.get(v)) {
+            if(ch[nv] == 0) DFS(nv);
+        }
+    }
+    public int solution(int n, int[][] edge) {
+        graph = new ArrayList<ArrayList<Integer>>();
+        for(int i = 0; i <= n; i++){
+            graph.add(new ArrayList<>());
+        }
+        ch = new int[n+1];
+        for (int[] x:edge) {
+            graph.get(x[0]).add(x[1]);
+            graph.get(x[1]).add(x[0]);
+        }
+        cnt = 0;
+        DFS(1);
+        return n - cnt;
     }
 
     public static void main(String[] args){
