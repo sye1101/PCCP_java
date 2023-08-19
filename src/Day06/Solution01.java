@@ -1,6 +1,4 @@
 package Day06;
-import com.sun.source.tree.BreakTree;
-
 import java.util.*;
 class Solution01 {
     public int solution(int[] nums){
