@@ -1,9 +1,31 @@
 package Day06;
+import com.sun.source.tree.BreakTree;
+
 import java.util.*;
 class Solution01 {
     public int solution(int[] nums){
-        int answer = 0;
-        return answer;
+        int n = nums.length;
+        int[] ch = new int[n];
+        Queue<Integer> Q = new LinkedList<>();
+        Q.offer(0);
+        ch[0] = 1;
+        int L = 0;
+        while (!Q.isEmpty()){
+            int len = Q.size();
+            for (int i = 0; i < len; i++) {
+                int x = Q.poll();
+                for (int j = 1; j <= nums[x]; j++) {
+                    int nx = x + j;
+                    if(nx == n - 1) return L+1;
+                    if(nx < n && ch[nx] == 0) {
+                        ch[nx] = 1;
+                        Q.offer(nx);
+                    }
+                }
+            }
+            L++;
+        }
+        return -1;
     }
 
     public static void main(String[] args){
